@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Users</title>
+</head>
+<body>
+  <h1>List of Users</h1>
+  <% if (allUsers.length > 0) { %>
+  <p>oya</p>
+  <ul>
+    <% allUsers.forEach(user => { %>
+      <li><%= user.username %> - <%= user.password %> pass</li>
+    <% }) %>
+  </ul>
+<% } else { %>
+    <p>There are no users</p>
+    <a href="#">Add User</a>
+  <% } %>
+  <form method="post" action="/user/">
+        <input type="text" name="username">
+        <input type="text" name="password">
+        <input type="submit" value="Add User">
+    </form>
+</body>
+</html>
