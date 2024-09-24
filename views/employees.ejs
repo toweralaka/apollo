@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employees</title>
+</head>
+<body>
+  <h1>List of Employees</h1>
+  <% if (allEmployees.length > 0) { %>
+  <p>oya</p>
+  <ul>
+    <% allEmployees.forEach(user => { %>
+      <li><%= user.username %> - <%= user.name %> - <%= user.employee_id %></li>
+    <% }) %>
+  </ul>
+<% } else { %>
+    <p>There are no employees</p>
+  <% } %>
+  <form method="post" action="/employees/addNew/">
+        <input type="text" name="username">
+        <input type="text" name="password">
+        <input type="submit" value="Add Employee">
+    </form>
+</body>
+</html>

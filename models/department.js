@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
-// const { Schema } = mongoose;
 
-const userSchema = mongoose.model("User", new mongoose.Schema(
+const departmentSchema = mongoose.model("Department", new mongoose.Schema(
     {
-        "username": {
+        "name": {
             type: String,
+            unique: true,
             required: true
         },
-        "password": {
+        "department_id": {
             type: String,
+            unique: true,
             required: true
         }
     },
@@ -17,5 +18,4 @@ const userSchema = mongoose.model("User", new mongoose.Schema(
     }
 ));
 
-// module.exports = mongoose.model("User", userSchema);
-module.exports = userSchema;
+module.exports = departmentSchema;
